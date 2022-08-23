@@ -1,0 +1,33 @@
+@mixin margins {
+    margin: 3em 0;
+}
+
+@mixin only-top-margin {
+    margin: 4em 0 0 0;   
+}
+
+@mixin flex-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@mixin tablet {
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+
+// change theme by changing false to true in dark class.
+@mixin theme($dark-theme: true) {
+    @if $dark-theme {
+        background: darken($secondary-color, 100%);
+        color: lighten($secondary-color, 100%);
+    }
+}
+
+.dark {
+    @include theme($dark-theme: false)
+}
+
+

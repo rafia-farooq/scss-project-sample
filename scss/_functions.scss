@@ -1,0 +1,7 @@
+@function font-weight($weight-name) {
+    @return map-get($font-weights, $weight-name);
+}
+
+@function paddings($padding-all-sides) {
+    @return map-get($padding-size, $padding-all-sides);
+}
